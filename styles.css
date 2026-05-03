@@ -1,0 +1,88 @@
+:root {
+  --bg: #07080f;
+  --card: rgba(22, 24, 35, 0.72);
+  --text: #f5f6ff;
+  --muted: #b3b7d4;
+  --accent: #8b5cf6;
+  --accent-2: #22d3ee;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at 10% 10%, #10142c, var(--bg));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.bg-orb {
+  position: fixed;
+  width: 35vw;
+  height: 35vw;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.45;
+  z-index: -2;
+}
+.orb-1 { top: -8vw; left: -8vw; background: #7c3aed; }
+.orb-2 { right: -8vw; bottom: -8vw; background: #06b6d4; }
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+.shell { width: min(1100px, 92vw); margin: 2rem auto 3rem; }
+header { margin-bottom: 1rem; }
+header h1 { margin-bottom: .3rem; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 0 20px #8b5cf6; }
+header p { margin-top: 0; color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 60px rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+}
+.controls {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 1rem;
+}
+.panel { padding: .6rem; }
+label { display: block; margin-bottom: .8rem; color: var(--muted); font-size: .92rem; }
+input, select, button {
+  width: 100%;
+  margin-top: .35rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.2);
+  padding: .7rem .8rem;
+  background: rgba(6,7,14,.8);
+  color: var(--text);
+}
+button {
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 0 18px rgba(139,92,246,.5);
+}
+button:hover { filter: brightness(1.08); }
+.preview { margin-top: 1rem; padding: 1rem; }
+.canvas-wrap { width: 100%; overflow: auto; }
+canvas {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: #111827;
+}
+.actions { margin-top: .8rem; }
