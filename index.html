@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowThumb Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <main class="app shell">
+      <header>
+        <h1>GlowThumb Studio</h1>
+        <p>Create clean, glowing Gen-Z thumbnails from text prompts or redesign references.</p>
+      </header>
+
+      <section class="controls card">
+        <div class="panel">
+          <h2>Prompt Builder</h2>
+          <label>
+            Main title
+            <input id="titleInput" placeholder="e.g., I QUIT MY JOB FOR THIS" maxlength="52" />
+          </label>
+          <label>
+            Subtitle
+            <input id="subtitleInput" placeholder="e.g., 30 Days Challenge" maxlength="72" />
+          </label>
+          <label>
+            Theme color
+            <input id="themeColor" type="color" value="#8b5cf6" />
+          </label>
+          <button id="generateBtn">Generate Thumbnail</button>
+        </div>
+
+        <div class="panel">
+          <h2>Copy & Redesign</h2>
+          <p>Upload a thumbnail you own or have rights to, then apply a redesign style.</p>
+          <input id="thumbUpload" type="file" accept="image/*" />
+          <label>
+            Redesign style
+            <select id="styleSelect">
+              <option value="neon">Neon Pop</option>
+              <option value="mono">Monochrome Luxe</option>
+              <option value="retro">Retro Gradient</option>
+            </select>
+          </label>
+          <button id="redesignBtn">Apply Redesign</button>
+        </div>
+      </section>
+
+      <section class="preview card">
+        <div class="canvas-wrap">
+          <canvas id="thumbCanvas" width="1280" height="720"></canvas>
+        </div>
+        <div class="actions">
+          <button id="downloadBtn">Download PNG</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
